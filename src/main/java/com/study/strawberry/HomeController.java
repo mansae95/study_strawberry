@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	// test2
+	// 지금 제가 수정하는게 원본파일 입니다.
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
