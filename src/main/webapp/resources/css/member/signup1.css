@@ -55,8 +55,9 @@ body, html {
 .chk label {
 	text-decoration: underline;
 }
-.chk label span{
-	text-decoration: none;
+.chk > span {
+	font-size: 11px;
+	color: gray;
 }
 .agreement_box {
 	overflow: auto;

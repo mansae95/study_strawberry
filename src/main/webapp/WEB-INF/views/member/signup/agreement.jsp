@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/member/signup1.css'/>">
 <script type="text/javascript" src="<c:url value = '/resources/js/member/signup1.js'/>"></script>
 
-<title>Signup - 약관동의</title>
+<title>회원가입(약관동의)</title>
 
 </head>
 <body>
@@ -38,7 +38,7 @@
 							<label>
 								서비스 이용약관 동의
 							</label>
-							<span>(필수)</span>
+							<span><b>(필수)</b></span>
 						</span>
 						<div class="agreement_box" style="height:310px;">
 							<p>
@@ -90,7 +90,7 @@
 							<label>
 								개인정보 수집 및 이용 동의
 							</label>
-							<span>(필수)</span>
+							<span><b>(필수)</b></span>
 						</span>
 						<div class="agreement_box">
 							<p>
