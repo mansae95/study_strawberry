@@ -1,96 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
 
-<style>
-body, html {
-	text-align: center;
-}
-#container {
-	padding : 0px 30px;
-	width: 1400px;
-	margin: 0px auto;
-}
-#div_left {
-	float: left;
-	/*width: 50%;*/
-	margin: 0px 50px;
-	
-	text-align: center;
-	display: inline-block;
-}
+<link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/member/signup1.css'/>">
+<script type="text/javascript" src="<c:url value = '/resources/js/member/signup1.js'/>"></script>
 
-#div_right {
-	padding: 50px 0px;
-	float: left;
-	text-align: center;
-	margin: 0px 50px;
-	display: inline-block;
-}
-
-#div_left_header {
-	margin: 0px 0px;
-	padding: 50px 0px 0px 0px;
-	width: 600px;
-	/*display: inline-block;*/
-}
-
-.div_content {
-	margin: 0px 0px;
-	width: 600px;
-	display: inline-block;	
-}
-
-.div_chk {
-	margin: 20px 0px;
-	text-align : left;
-}
-.chk {
-	padding: 5px;
-}
-.chk label {
-	text-decoration: underline;
-}
-.chk label span{
-	text-decoration: none;
-}
-
-
-#div_all_chk {
-	margin: 10px 0px 20px;
-}
-#all_chk_explain{
-	padding: 0px 30px;
-	font-size: 12px;
-}
-
-.agreement_box {
-	overflow: auto;
-	height: 200px;
-	font-size: 10px;
-	border: 1px solid gray;
-	margin: 10px 0px;
-}
-
-#submit-btn {
-	background-color: #454545;
-	color: white;
-	text-align: center;
-	font-size: 20px;
-	width: 300px;
-}
-
-</style>
+<title>Signup - 약관동의</title>
 
 </head>
 <body>
-	
-	<form id="agreement_form" method="post">
-		<div id="container">
+	<div id="container">
+		<form id="agreement_form" action="#" method="post">
 			<div id="div_left">
 				<div id="div_left_header">
 					<h1>Strawberry</h1>
@@ -110,7 +34,7 @@ body, html {
 					</div>
 					<div id="div_chk1" class="div_chk">
 						<span class="chk">
-							<input type="checkbox" name="#" value="#">
+							<input id="chkbox1" type="checkbox" name="#" value="#">
 							<label>
 								서비스 이용약관 동의
 							</label>
@@ -162,7 +86,7 @@ body, html {
 				<div class="div_content">
 					<div id="div_chk2" class="div_chk">
 						<span class="chk">
-							<input type="checkbox" name="#" value="#">
+							<input id="chkbox2" type="checkbox" name="#" value="#">
 							<label>
 								개인정보 수집 및 이용 동의
 							</label>
@@ -260,11 +184,28 @@ body, html {
 					<input id="submit-btn" type="button" value="동의">
 				</div>
 			</div>
-		</div>
-			
-	</form>
+		</form>
+	</div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	
+		$(document).ready(function() {
+			$('#all_chk input').change(function() {
+				checkAllchkbox();
+			});
 			
+			
+			$('#submit-btn').click(function() {
+				if (checkSubmit()) {
+					$("#agreement_form").submit();	
+				} else {
+					alert("경고창 : 필수 약관에 대하여 동의해주세요.");
+				}
+			});
+		});
+		
+	</script>
 			
 			
 		
