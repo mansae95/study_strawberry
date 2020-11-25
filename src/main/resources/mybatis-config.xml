@@ -6,4 +6,9 @@
 
 <configuration>
 
+	<mappers>
+		<mapper class="com.study.strawberry.sign_up.SignUpMapper" />
+	</mappers>
+
+
 </configuration>

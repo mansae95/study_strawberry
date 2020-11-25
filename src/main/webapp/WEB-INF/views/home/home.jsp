@@ -17,7 +17,7 @@
 				<h1 class="company_name">Strawberry</h1>
 				<h1 class="company_sub">It's fresh</h1>
 				<ul class="menu_ul">
-					<li class="menu_li"><a class="menu_a" href="">NOTIC</a></li>
+					<li class="menu_li"><a class="menu_a" href="sdh_test">NOTIC</a></li>
 					<li class="menu_li"><a class="menu_a" href="">MARKET</a></li>
 					<li class="menu_li"><a class="menu_a" href="">MY PAGE</a></li>
 				</ul>
