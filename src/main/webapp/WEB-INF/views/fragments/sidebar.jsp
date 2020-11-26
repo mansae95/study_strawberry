@@ -14,7 +14,7 @@
 			</c:when>
 			<c:otherwise>
 				<li class="member_li"><a href="#">SIGN IN</a></li>
-				<li class="member_li"><a href="#">SIGN UP</a></li>
+				<li class="member_li"><a href="sign_up">SIGN UP</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>

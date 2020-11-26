@@ -26,7 +26,13 @@ public class SignUpContoller {
     @Autowired
     private SqlSession sqlSession;
 
-    @RequestMapping(value = "sdh_test")
+    @RequestMapping(value = "sign_up")
+    public ModelAndView footerAndSidebarExample(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        return new ModelAndView("member/signup/agreement");
+    }
+
+    @RequestMapping(value = "member_join")
     public ModelAndView home(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //mybatis 세션 호출
         SignUpMapper mapper = sqlSession.getMapper(SignUpMapper.class);
@@ -53,16 +59,30 @@ public class SignUpContoller {
         if (ip == null) {
             ip = request.getRemoteAddr();
         }
+
+        //선택정보 수신여부(체크박스 값) 입력
+        String ad_agree_yn = request.getParameter("ad_agree_yn");
+        if(ad_agree_yn!=null && ad_agree_yn.equals("on")){
+            ad_agree_yn = "Y";
+        }else{
+            ad_agree_yn = "N";
+        }
+
         //토큰정보 입력 Map
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("token", token);
         param.put("ip", ip);
-        param.put("ad_agree_yn", "N");
+        param.put("ad_agree_yn",ad_agree_yn);
         
         //토큰정보 db 입력
         mapper.insertToken(param);
-
-        return new ModelAndView("example/example");
+        
+        //토큰 담긴 view 지정
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("token",token);
+        mv.setViewName("member/signup/member_join");
+        
+        return mv;
     }
 
 

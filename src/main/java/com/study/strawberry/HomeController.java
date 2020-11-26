@@ -20,7 +20,7 @@ public class HomeController {
 	
 
 	//footer와 side bar 적용에 관한 Example.
-	@RequestMapping(value = "example", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "main", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView footerAndSidebarExample(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		/* 로그인 세션 체크용, 나중에 로그인 체크시 세션네임 변경해야함. (테스트용)
 		 * 주석 없애고 example 페이지로 가면 사이드바에 SIGN IN / SIGN UP에서 SIGN OUT / MY PAGE로 변경되는걸 확인하실 수 있음. */
@@ -28,6 +28,6 @@ public class HomeController {
 		HttpSession session = request.getSession();
 		session.setAttribute("loginTest", true);
 		*/
-		return new ModelAndView("example/example");
+		return new ModelAndView("home/main");
 	}
 }
