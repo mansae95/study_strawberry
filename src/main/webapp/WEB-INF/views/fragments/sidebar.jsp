@@ -8,13 +8,13 @@
 	</div>
 	<ul class="sidebar_member">
 		<c:choose>
-			<c:when test="${loginTest eq true}">
+			<c:when test="${level eq 1}">
 				<li class="member_li"><a href="#">SIGN OUT</a></li>
 				<li class="member_li"><a href="#">MY PAGE</a></li>
 			</c:when>
 			<c:otherwise>
-				<li class="member_li"><a href="#">SIGN IN</a></li>
-				<li class="member_li"><a href="sign_up">SIGN UP</a></li>
+				<li class="member_li"><a href="/strawberry/member/signin">SIGN IN</a></li>
+				<li class="member_li"><a href="/strawberry/member/sign_up">SIGN UP</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>

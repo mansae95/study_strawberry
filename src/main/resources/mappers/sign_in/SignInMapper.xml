@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.strawberry.controller.signin.SignInMapper">
+	<select id="signIn" parameterType="com.study.strawberry.dto.signin.SignInDTO" resultType="com.study.strawberry.dto.signin.MemberDTO">
+		SELECT email, pwd, nick, level FROM strawberry.members WHERE email=#{email} AND pwd=SHA2(#{password}, 256)
+	</select>
+</mapper>
