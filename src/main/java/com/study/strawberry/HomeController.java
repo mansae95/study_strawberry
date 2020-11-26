@@ -18,6 +18,7 @@ public class HomeController {
 		return new ModelAndView("home/home");
 	}
 	
+
 	//footer와 side bar 적용에 관한 Example.
 	@RequestMapping(value = "example", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView footerAndSidebarExample(HttpServletRequest request, HttpServletResponse response) throws Exception {
