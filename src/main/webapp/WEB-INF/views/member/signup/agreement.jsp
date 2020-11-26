@@ -11,8 +11,8 @@
 <link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/fragments/side_and_footer.css' /> ">
 <!-- 회원가입 페이지 css/js -->
 
-<link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/member/signup1.css'/>">
-<script type="text/javascript" src="<c:url value = '/resources/js/member/signup1.js'/>"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/member/signup1.css?ver=1'/>">
+<script type="text/javascript" src="<c:url value = '/resources/js/member/signup1.js?ver=1'/>"></script>
 
 <title>회원가입(약관동의)</title>
 
@@ -20,9 +20,6 @@
 <body>
 	<!-- side bar -->
 	<c:import url="/WEB-INF/views/fragments/sidebar.jsp" />
-	
-	<!-- 실질적으로 내용이 표시되는 영역 꼭 'contents'로 생성 안해도 되지만 div를 내용을 감쌀 div추가가 필요함.-->
-	<!-- <div class="contents"> -->
 		
 	<div id="container">
 		<form id="agreement_form" action="#" method="post">
@@ -193,7 +190,6 @@
 			
 		</form>
 	</div>
-	<!-- </div> -->
 	
 	<!-- Footer -->
 	<c:import url="/WEB-INF/views/fragments/footer.jsp" />
@@ -203,9 +199,13 @@
 	
 		$(document).ready(function() {
 			$('#all_chk input').change(function() {
-				checkAllchkbox();
+				var status = $('#all_chk input').is(":checked");
+				checkAllchkbox(status);
 			});
 			
+			$('.chk input').change(function() {
+				uncheckAllchk();
+			});
 			
 			$('#submit-btn').click(function() {
 				if (checkSubmit()) {
@@ -214,6 +214,8 @@
 					alert("필수 약관에 대하여 동의해주세요.");
 				}
 			});
+			
+			
 		});
 		
 	</script>
