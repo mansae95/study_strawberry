@@ -1,9 +1,9 @@
-function checkAllchkbox() {
+function checkAllchkbox(status) {
 	var sels = document.getElementsByTagName("input");
 	var i = 1;
-	while (sels[0].checked == true && i < sels.length) {
+	while (sels[0].checked == status && i < sels.length) {
 		if (sels[i].type == "checkbox") {
-			sels[i].checked = true;
+			sels[i].checked = status;
 		}
 		i++;
 	}
@@ -18,4 +18,16 @@ function checkSubmit() {
 	}
 	
 	return false;
+}
+
+function uncheckAllchk(){
+	var sels = document.getElementsByTagName("input");
+	var i = 1;
+	while (sels[0].checked == true && i < sels.length) {
+		if (sels[i].type == "checkbox" && sels[i].checked == false) {
+			sels[0].checked = false;
+			return;
+		}
+		i++;
+	}
 }
