@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.strawberry.sign_up.repository.SignUpMemberMapper">
+   
+	<select id="selectEmail" resultType="String">
+		SELECT
+			email
+		FROM
+			members
+		WHERE
+			email=#{email}
+	</select>
+	
+	<insert id="insertMember">
+		INSERT INTO
+			members(email, pwd, nick, ad_agree_yn, join_date, udp_date, user_no)
+		VALUES
+			(#{email}, SHA2(#{pwd}, 256), #{nick}, #{adAgreeYn}, SYSDATE(), SYSDATE(), 'P2')
+	</insert>
+	
+</mapper>

@@ -19,7 +19,7 @@ public class SignInService {
 		this.member = mapper.signIn(dto);
 	}
 	
-	public boolean isSignIn() {
+	public boolean isSignIn() { // member가 null인지 확인
 		if(member != null)
 			if(this.member.isMemberData())
 				return true;

@@ -24,9 +24,11 @@
 <!-- <div class="contents"> -->
 
 <div id="container">
-회원가입 페이지
+	회원가입 페이지
     ${token}
 </div>
+
+
 <!-- </div> -->
 
 <!-- Footer -->

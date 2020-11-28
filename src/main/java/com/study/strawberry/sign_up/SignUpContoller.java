@@ -25,7 +25,7 @@ public class SignUpContoller {
         return new ModelAndView("member/signup/agreement");
     }
 
-    @RequestMapping(value = "member_join")
+    @RequestMapping(value = "member/member_join")
     public ModelAndView home(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //mybatis 세션 호출
         SignUpMapper mapper = sqlSession.getMapper(SignUpMapper.class);
@@ -65,7 +65,7 @@ public class SignUpContoller {
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("token", token);
         param.put("ip", ip);
-        param.put("ad_agree_yn",ad_agree_yn);
+        param.put("ad_agree_yn", ad_agree_yn);
         
         //토큰정보 db 입력
         mapper.insertToken(param);
@@ -78,5 +78,7 @@ public class SignUpContoller {
         return mv;
     }
 
-
+   
+    
+    
 }
