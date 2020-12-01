@@ -30,6 +30,7 @@ public class SignInController {
 		ModelAndView mav = new ModelAndView("member/signin/signIn");
 
 		if(request.getMethod().contentEquals("POST")) {
+			System.out.println(dto.getEmail());
 			if(result.hasErrors()) return mav;
 			else {
 				signService.signIn(dto);
@@ -47,6 +48,7 @@ public class SignInController {
 				return mav;
 			}
 		}
+		
 		
 		mav.addObject("signinForm", null);
 		return mav;

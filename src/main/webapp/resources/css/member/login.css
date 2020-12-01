@@ -17,7 +17,18 @@
 	text-align: center;
 	}
 
+p{
+	width: 360px;
+}
 
+.er{
+	color: red; font-weight: bold; font-size: 13px;
+	margin-bottom: 3%
+	
+}
+.sper{
+	display: none;
+}
 
 form input {
 

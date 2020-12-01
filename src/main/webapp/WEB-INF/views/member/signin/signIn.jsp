@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,13 +21,13 @@
 		<!-- 실질적으로 내용이 표시되는 영역 꼭 'contents'로 생성 안해도 되지만 div를 내용을 감쌀 div추가가 필요함.-->
 		<div class="contents">
 			<form:form modelAttribute="signinForm" method="POST" id="loginForm" action="/member/signin">
-				<input id="email" name="text" type="email" value="${signinForm.email}" placeholder="Email" autocomplete="off" spellcheck="false">
-				<span style="display:none; color: red; font-weight: bold; font-size: 12px;" id="emailerror"> 이메일에 공백이 들어가선 안됩니다 </span>
-				<form:errors path="email" id="emailMSG" element="p"/>
+				<input id="email" name="email" type="email" class="email" value="${signinForm.email}" placeholder="Email" autocomplete="off" spellcheck="false">
+				<span class="er sper" id="emailerror"> 이메일에 공백이 들어가선 안됩니다 </span>
+				<form:errors path="email" class="emailMSG er" element="p"/>
 				<input id="password" name="password" type="password" placeholder="Password">
-				<span style="display:none; color: red; font-weight: bold; font-size: 12px;" id="pwerror"> 비밀번호에 공백이 들어가선 안됩니다 </span>
-				<form:errors path="password" id="pMSG" element="p"/>
-				<form:errors path="eMsg" id="eMSG" element="p" />
+				<span class="er sper" id="pwerror"> 비밀번호에 공백이 들어가선 안됩니다 </span>
+				<form:errors path="password" class="pwMSG er" element="p"/>
+				<form:errors path="eMsg"  class="eMSGhide er" element="p" />
 				<input class="loginbutton" type="button" value="LOGIN" onclick="checkForm()">
 			</form:form>
 		</div>
@@ -43,22 +42,27 @@
 <script>
 
 /* test@mail.com/001717a */
-
 	
 
 	
-	$('.loginbutton').click(function () {
-		$('#loginForm')[0].reset();
-		
-	})
-
+$(document).ready(function () {
 	
+	$('#loginForm').trigger("reset");
+	window.onkeydown = function() {
+		var kcode = event.keyCode;
+		if(kcode == 116) {
+		history.replaceState({}, null, location.pathname);
+		}
+		}
+})
+
+
 	function checkForm() {
 		
 		var blank_pattern = /[\s]/g;
 		
 	
-		
+		// 프론트
 		if( blank_pattern.test( $('#email').val()) == true){
 		    $('#emailerror').show();
 		    return false;
@@ -68,7 +72,8 @@
 			return false;
 		}
 		
-		else {
+		 
+		else{
 			$('#loginForm').submit();
 			
 		}
@@ -79,14 +84,14 @@
 	
 		$('#email').mouseup(function () {
 			$('#emailerror').hide();
-			/* $('#eMSG').hide(); */
-			$('#emailMSG').hide();
+			 $('.emailMSG').hide(); 
+			 $('.eMSGhide').hide(); 555555
 		});
 		
 		$('#password').mouseup(function () {
 			$('#pwerror').hide();
-			/* $('#eMSG').hide(); */
-			$('#pMSG').hide();
+			 $('.pwMSG').hide();
+			 $('.eMSGhide').hide(); 
 		});
 		
 		
