@@ -27,7 +27,7 @@ public class SignInController {
 				@ModelAttribute("signinForm") @Valid SignInDTO dto, BindingResult result) {
 		
 		//예제 로그인 주소.
-		ModelAndView mav = new ModelAndView("example/signExample");
+		ModelAndView mav = new ModelAndView("member/signin/signIn");
 
 		if(request.getMethod().contentEquals("POST")) {
 			if(result.hasErrors()) return mav;
