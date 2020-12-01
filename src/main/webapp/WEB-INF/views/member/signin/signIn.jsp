@@ -43,7 +43,14 @@
 <script>
 
 /* test@mail.com/001717a */
+
 	
+
+	
+	$('.loginbutton').click(function () {
+		$('#loginForm')[0].reset();
+		
+	})
 
 	
 	function checkForm() {
@@ -63,6 +70,7 @@
 		
 		else {
 			$('#loginForm').submit();
+			
 		}
 		
 		
@@ -82,8 +90,6 @@
 		});
 		
 		
-	
-
 
 
 </script>
