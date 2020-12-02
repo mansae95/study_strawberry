@@ -1,0 +1,73 @@
+.contents{
+		width:  100%;
+		
+		position: relative;
+
+	}
+
+	form{
+	border: 1px solid #DDD;
+	max-width: 360px;
+    padding: 45px;
+    position:absolute;
+    left:50%;
+    top:20%;
+    margin-left:-250px;
+    margin-top:-250px;
+	text-align: center;
+	}
+
+p{
+	width: 360px;
+}
+
+.er{
+	color: red; font-weight: bold; font-size: 13px;
+	margin-bottom: 3%
+	
+}
+.sper{
+	display: none;
+}
+
+form input {
+
+  outline: 0;
+ background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.loginbutton {
+
+  text-transform: uppercase;
+  outline: 0;
+  background: #FFDADA;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+} 
+
+
+body{
+	background:url('/resources/image/bkg/bkg.jpg') no-repeat;
+	background-size: cover;
+}
+
+.wrap{
+	display: inherit;
+}
+
+.logowrap{
+	text-align: center;
+	margin-right: 100px;
+}
+.logo{
+	
+}
