@@ -1,6 +1,6 @@
 .contents{
 		width:  100%;
-		height: 100%;
+		
 		position: relative;
 
 	}
@@ -11,7 +11,7 @@
     padding: 45px;
     position:absolute;
     left:50%;
-    top:50%;
+    top:20%;
     margin-left:-250px;
     margin-top:-250px;
 	text-align: center;
@@ -53,3 +53,21 @@ form input {
   font-size: 14px;
   cursor: pointer;
 } 
+
+
+body{
+	background:url('/resources/image/bkg/bkg.jpg') no-repeat;
+	background-size: cover;
+}
+
+.wrap{
+	display: inherit;
+}
+
+.logowrap{
+	text-align: center;
+	margin-right: 100px;
+}
+.logo{
+	
+}
