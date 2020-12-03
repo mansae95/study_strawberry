@@ -23,5 +23,9 @@ public class SignUpTokenService {
 		return mapper.selectAdAgreeYnByToken(token);
 	}
 	
+	// Token 삭제
+	public void deleteByToken(String token) {
+		mapper.deleteByToken(token);
+	}
 	
 }

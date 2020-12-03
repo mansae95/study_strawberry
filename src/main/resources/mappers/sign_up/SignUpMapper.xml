@@ -27,4 +27,11 @@
 			token=#{token}
 	</select>
 
+	<delete id="deleteByToken">
+		DELETE FROM
+			sign_up_token
+		WHERE
+			token=#{token}
+	</delete>
+
 </mapper>

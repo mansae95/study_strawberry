@@ -72,7 +72,7 @@ public class SignUpContoller {
         
         //토큰 담긴 view 지정
         ModelAndView mv = new ModelAndView();
-        mv.addObject("token",token);
+        mv.addObject("token", token);
         mv.setViewName("member/signup/member_join");
         
         return mv;

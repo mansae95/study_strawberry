@@ -32,7 +32,7 @@ public class SignInController {
 		if(request.getMethod().contentEquals("POST")) {
 			if(result.hasErrors()) return mav;
 			else {
-				signService.signIn(dto); // dto를 호출한다. -> signService의 member 객체에 데이터가 채워진다.
+				signService.signIn(dto); 
 				
 				if(signService.isSignIn()) {
 					HttpSession session = request.getSession();

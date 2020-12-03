@@ -1,8 +1,15 @@
 package com.study.strawberry.sign_up.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.study.strawberry.sign_up.dto.SignUpMemberDTO;
@@ -35,9 +42,22 @@ public class SignUpMemberController {
      	- Parameter : email, pwd, nick, token
      	- response View : Redirect:/member/signin
      */
-	@RequestMapping("signupmember")
-    public String SignUpMember(SignUpMemberDTO member, 
-    						   String token) {
+	@PostMapping("signupmember")
+    public String SignUpMember(@ModelAttribute("signUpMember") @Valid SignUpMemberDTO signUpMember, 
+					    	   BindingResult result,
+					    	   String token,
+    						   Model model) {
+		
+    	if (result.hasErrors()) { // 회원가입 실패
+    		System.out.println(signUpMember);
+//    		model.addAttribute("signUpMember", signUpMember);
+    		return "example/signupTest";
+    	} 
+    	
+    	
+ 
+    	
+    	/*
     	sums.setSqlSession();
     	
     	if(sums.checkValidation(member)) {
@@ -48,10 +68,13 @@ public class SignUpMemberController {
     		// 회원 등록
     		sums.insertMember(member);
     		
+    		// token 삭제
+    		suts.deleteByToken(token);
+    		
     	} else { // 회원가입 실패, 뷰 작성 내용 확인 후 작성 예정
     		
     		return "redirect:/member/signin";
-    	}
+    	}*/
     	
     	
     	return "redirect:/member/signin";
