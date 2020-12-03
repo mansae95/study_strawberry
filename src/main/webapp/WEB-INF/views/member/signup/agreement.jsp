@@ -21,7 +21,7 @@
 	<c:import url="/WEB-INF/views/fragments/sidebar.jsp" />
 		
 	<div id="container">
-		<form id="agreement_form" action="member_join" method="post">
+		<form id="agreement_form" action="/member_join" method="post">
 			<div id="contents">
 				<div id="div_left_header">
 					<h1>Strawberry</h1>
