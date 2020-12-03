@@ -20,39 +20,27 @@ public class SignUpMemberService {
 	public void setSqlSession() {
 		mapper = sqlSession.getMapper(SignUpMemberMapper.class);
 	}
-
-	// 회원가입 유효성 검사
-	public boolean checkValidation(SignUpMemberDTO member) {
-		
-		String email = member.getEmail();
-		String pwd = member.getPwd();
-		String nick = member.getNick();
-		
-		if (pwd == null || pwd.equals("")
-				|| nick == null || nick.equals("")) {
-			return false;
-		}
-		
-		if (checkEmailRegExp(email) 
-				&& !isExistEmail(email)) {
-			return true;
-		}
-		
-		return false;
-	}
+	
 	
 	// 이메일 중복 검사
-	private boolean isExistEmail(String email) {
-		
-		return mapper.selectEmail(email) != null ? true : false;
+	// 중복 이메일이 존재하지 않는다면 true
+	public boolean checkDuplEmail(String email) {
+		return mapper.selectEmail(email) == null ? true : false;
 	}
 	
+	
 	// 이메일 정규 표현식 확인
-	private boolean checkEmailRegExp(String email) {
-		
+	public boolean checkEmailRegExp(String email) {	
 		String emailRegExp = "\\w+@[a-zA-Z0-9-]+\\.[a-zA-Z.]+$";
 		
 		return Pattern.matches(emailRegExp, email);
+	}
+	
+	
+	// 닉네임 중복 검사
+	// 중복 닉네임이 존재하지 않는다면 true
+	public boolean checkDuplNick(String nick) {
+		return mapper.selectNick(nick) == null ? true : false;
 	}
 	
 	
@@ -60,6 +48,4 @@ public class SignUpMemberService {
 	public void insertMember(SignUpMemberDTO member) {
 		mapper.insertMember(member);
 	}
-	
-	
 }

@@ -18,10 +18,10 @@ public class SignUpMemberDTO {
 	private String email;
 	
 	@NotBlank(message = "패스워드를 입력해 주세요.")
-	private String pwd;
+	private String password;
 	
 	@NotBlank(message = "별명을 입력해주세요.")
-	private String nick;
+	private String nickname;
 	
 	private String adAgreeYn;
 	

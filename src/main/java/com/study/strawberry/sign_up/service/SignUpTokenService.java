@@ -18,10 +18,12 @@ public class SignUpTokenService {
 		mapper = sqlSession.getMapper(SignUpMapper.class);
 	}
 	
+	
 	// Token으로 AdAgreeYn 조회
 	public String selectAdAgreeYnByToken(String token) {
 		return mapper.selectAdAgreeYnByToken(token);
 	}
+	
 	
 	// Token 삭제
 	public void deleteByToken(String token) {

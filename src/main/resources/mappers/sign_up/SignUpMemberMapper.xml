@@ -11,11 +11,20 @@
 			email=#{email}
 	</select>
 	
+	<select id="selectNick" resultType="String">
+		SELECT
+			nick
+		FROM
+			members
+		WHERE
+			nick=#{nick}
+	</select>
+	
 	<insert id="insertMember">
 		INSERT INTO
-			members(email, pwd, nick, ad_agree_yn, join_date, udp_date, user_no)
+			members(email, pwd, nick, ad_agree_yn, join_date)
 		VALUES
-			(#{email}, SHA2(#{pwd}, 256), #{nick}, #{adAgreeYn}, SYSDATE(), SYSDATE(), 'P2')
+			(#{email}, SHA2(#{password}, 256), #{nickname}, #{adAgreeYn}, SYSDATE())
 	</insert>
 	
 </mapper>
