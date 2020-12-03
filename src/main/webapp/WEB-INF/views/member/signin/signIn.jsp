@@ -20,9 +20,7 @@
 		<div class="wrap">
 		
 		<div class="logowrap">
-		
 		<img class="logo" alt="logo" src="<c:url value = '/resources/image/bkg/signin.png' />">
-		
 		</div>
 		
 		
