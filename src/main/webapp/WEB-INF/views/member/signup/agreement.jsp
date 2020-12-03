@@ -10,7 +10,6 @@
 <link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/reset.css' />">
 <link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/fragments/side_and_footer.css' /> ">
 <!-- 회원가입 페이지 css/js -->
-
 <link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/member/signup1.css?ver=1'/>">
 <script type="text/javascript" src="<c:url value = '/resources/js/member/signup1.js?ver=1'/>"></script>
 

@@ -8,8 +8,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- css 두가지 로드해주셔야 합니다, reset.css와 side_and_footer.css -->
-		<link rel="stylesheet" type="text/css" href="/resources/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="/resources/css/fragments/side_and_footer.css">
+		<link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/reset.css' />">
+		<link rel="stylesheet" type="text/css" href="<c:url value = '/resources/css/fragments/side_and_footer.css' /> ">
 		<title>login</title>
 	</head>
 	<body>
