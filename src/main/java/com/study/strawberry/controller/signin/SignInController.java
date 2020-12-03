@@ -21,15 +21,19 @@ import com.study.strawberry.service.signin.SignInService;
 public class SignInController {
 	@Autowired
 	SignInService signService;
-	
+
+
+
+
 	@RequestMapping(value = "member/signin", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView memberSignin(HttpServletRequest request, HttpServletResponse response,
 				@ModelAttribute("signinForm") @Valid SignInDTO dto, BindingResult result) {
 		
 		//예제 로그인 주소.
-		ModelAndView mav = new ModelAndView("example/signExample");
+		ModelAndView mav = new ModelAndView("member/signin/signIn");
 
 		if(request.getMethod().contentEquals("POST")) {
+			System.out.println(dto.getEmail());
 			if(result.hasErrors()) return mav;
 			else {
 				signService.signIn(dto); 
@@ -47,6 +51,7 @@ public class SignInController {
 				return mav;
 			}
 		}
+		
 		
 		mav.addObject("signinForm", null);
 		return mav;

@@ -76,3 +76,13 @@ h1 {
 	text-align: center;
 	color: #ffdada;
 }
+.fieldlabel{
+	        height:20px;
+	        padding-right:10px;
+	        background-color: #ffdada;
+	        text-align: left
+			}
+.titlelabel{
+	display: inline-block;
+	width: 15%;
+}
