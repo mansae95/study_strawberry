@@ -20,13 +20,24 @@ public class SignUpContoller {
     private SqlSession sqlSession;
 
     @RequestMapping(value = "member/sign_up")
-    public ModelAndView footerAndSidebarExample(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView signUP(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         return new ModelAndView("member/signup/agreement");
     }
 
+
+    @RequestMapping(value = "member/signup/emailCheckForm")
+    public ModelAndView emailCheckForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return new ModelAndView("member/signup/emailCheckForm");
+    }
+
+    @RequestMapping(value = "member/signup/nicknameCheckForm")
+    public ModelAndView nicknameCheckForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return new ModelAndView("member/signup/nicknameCheckForm");
+    }
+
     @RequestMapping(value = "member_join")
-    public ModelAndView home(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView memberJoin(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //mybatis 세션 호출
         SignUpMapper mapper = sqlSession.getMapper(SignUpMapper.class);
 

@@ -13,8 +13,8 @@
 				<li class="member_li"><a href="#">MY PAGE</a></li>
 			</c:when>
 			<c:otherwise>
-				<li class="member_li"><a href="/strawberry/member/signin">SIGN IN</a></li>
-				<li class="member_li"><a href="/strawberry/member/sign_up">SIGN UP</a></li>
+				<li class="member_li"><a href="/member/signin">SIGN IN</a></li>
+				<li class="member_li"><a href="/member/sign_up">SIGN UP</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>
