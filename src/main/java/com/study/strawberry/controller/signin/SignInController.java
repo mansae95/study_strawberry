@@ -36,7 +36,7 @@ public class SignInController {
 			System.out.println(dto.getEmail());
 			if(result.hasErrors()) return mav;
 			else {
-				signService.signIn(dto);
+				signService.signIn(dto); 
 				
 				if(signService.isSignIn()) {
 					HttpSession session = request.getSession();

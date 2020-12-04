@@ -10,7 +10,7 @@ public class MemberDTO {
 	private String nick;
 	private String level;
 	
-	public boolean isMemberData() {
+	public boolean isMemberData() { // null이 모두 아니라면 true
 		if(this.email != null && this.nick != null && this.level != null)
 			return true;
 		return false;

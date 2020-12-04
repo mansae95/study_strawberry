@@ -59,7 +59,7 @@
         function idCheck(){
 
             var email = document.getElementById("userEmail").value;
-
+			
             if (!email) {
                 alert("이메일를 입력하지 않았습니다.");
                 return false;

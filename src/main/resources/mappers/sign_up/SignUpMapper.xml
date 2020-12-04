@@ -18,4 +18,20 @@
 	       )
 	</insert>
 
+	<select id="selectAdAgreeYnByToken" resultType="String">
+		SELECT
+			ad_agree_yn
+		FROM
+			sign_up_token
+		WHERE
+			token=#{token}
+	</select>
+
+	<delete id="deleteByToken">
+		DELETE FROM
+			sign_up_token
+		WHERE
+			token=#{token}
+	</delete>
+
 </mapper>

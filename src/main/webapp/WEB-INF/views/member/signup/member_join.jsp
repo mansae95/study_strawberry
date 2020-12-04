@@ -58,9 +58,15 @@
         window.open("member/signup/nicknameCheckForm",
             "chkForm", "width=500, height=300, resizable = no, scrollbars = no");
     }
-
+	
 </script>
 
+<script>
+	var msg = "${msg}";
+	if (msg === "signupFail") {
+		alert("회원가입 실패");
+	}
+</script>
 
 <head>
     <meta charset="UTF-8">
@@ -82,7 +88,8 @@
 
 
 <div id="container">
-    <form id="agreement_form" action="/member_signup" name="userInfo"  method="post" onsubmit="return checkValue()">
+
+    <form id="agreement_form" action="<c:url value = '/member/member_signup' />" name="userInfo"  method="post" onsubmit="return checkValue()">
         <br><br>
         <div >
             <h1>Strawberry 회원가입</h1>
@@ -97,14 +104,15 @@
                 <br>
                  <div class="fieldlabel"><div class="titlelabel">비밀번호 확인 </div><input type="password" name="passwordCheck"/></div>
                 <br>
-                <div class="fieldlabel"><div class="titlelabel">닉네임 </div><input type="text" name="nickname"/>  <input type="button" value="닉네임중복확인" onclick="openNicknameCheck()"/></div>
+                <div class="fieldlabel"><div class="titlelabel">닉네임 </div><input type="text" name="nickname" id="userNickname"/>  <input type="button" value="닉네임중복확인" onclick="openNicknameCheck()"/></div>
                 <br>
 
         <input type="submit" id="submit-btn" value="등록하기"  /><br>
-    <input type="hidden" name="emailDuplication" value="emailUncheck" >
-    <input type="hidden" name="nicknameDuplication" value="nicknameUncheck" >
-    <inpupt type="hidden" name="token" value="${token}"/>
+	    <input type="hidden" name="emailDuplication" value="emailUncheck" >
+	    <input type="hidden" name="nicknameDuplication" value="nicknameUncheck" >
+	    <input type="hidden" name="token" value="${token}"/>
     </form>
+
 </div>
 
 

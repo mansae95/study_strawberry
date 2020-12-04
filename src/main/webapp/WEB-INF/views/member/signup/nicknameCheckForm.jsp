@@ -58,9 +58,9 @@
         // 닉네임 중복체크
         function nicknameCheck(){
 
-            var email = document.getElementById("userNickname").value;
+            var nickname = document.getElementById("userNickname").value;
 
-            if (!email) {
+            if (!nickname) {
                 alert("닉네임을 입력하지 않았습니다.");
                 return false;
             }

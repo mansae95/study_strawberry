@@ -76,18 +76,20 @@ public class SignUpContoller {
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("token", token);
         param.put("ip", ip);
-        param.put("ad_agree_yn",ad_agree_yn);
+        param.put("ad_agree_yn", ad_agree_yn);
         
         //토큰정보 db 입력
         mapper.insertToken(param);
         
         //토큰 담긴 view 지정
         ModelAndView mv = new ModelAndView();
-        mv.addObject("token",token);
+        mv.addObject("token", token);
         mv.setViewName("member/signup/member_join");
         
         return mv;
     }
 
-
+   
+    
+    
 }
