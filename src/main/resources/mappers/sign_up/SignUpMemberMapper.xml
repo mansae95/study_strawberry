@@ -22,9 +22,9 @@
 	
 	<insert id="insertMember">
 		INSERT INTO
-			members(email, pwd, nick, ad_agree_yn, join_date)
+			members(email, pwd, nick, ad_agree_yn, level, join_date)
 		VALUES
-			(#{email}, SHA2(#{password}, 256), #{nickname}, #{adAgreeYn}, SYSDATE())
+			(#{email}, SHA2(#{password}, 256), #{nickname}, #{adAgreeYn}, 1, SYSDATE())
 	</insert>
 	
 </mapper>

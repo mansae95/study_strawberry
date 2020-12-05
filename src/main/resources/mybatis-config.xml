@@ -7,6 +7,6 @@
 <configuration>
 	<mappers>
 		<mapper class="com.study.strawberry.sign_up.SignUpMapper" />
-		<mapper class="com.study.strawberry.controller.signin.SignInMapper" />
+		<mapper class="com.study.strawberry.dao.sign.SignMapper" />
 	</mappers>
 </configuration>

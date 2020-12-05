@@ -2,7 +2,6 @@ package com.study.strawberry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ public class HomeController {
 		// 혹시 나중에 메인 이미지를 슬라이드형식으로 편집할 수 있음으로 받아오기 쉽게 ModelAndView타입 사용.
 		return new ModelAndView("home/home");
 	}
-	
 
 	//footer와 side bar 적용에 관한 Example.
 	@RequestMapping(value = "main", method = {RequestMethod.GET, RequestMethod.POST})
