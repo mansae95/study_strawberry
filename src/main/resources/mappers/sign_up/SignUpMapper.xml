@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.strawberry.sign_up.SignUpMapper">
+    <!-- 요청토큰 등록 -->
+    <insert id="insertToken" parameterType="hashmap" >
+	INSERT
+	INTO sign_up_token (
+					  token
+					, ip
+					, ad_agree_yn
+					, create_date
+				       )
+	VALUES (
+					  #{token}
+                    , #{ip}
+                    , #{ad_agree_yn}
+                    , SYSDATE()
+	       )
+	</insert>
+
+	<select id="selectAdAgreeYnByToken" resultType="String">
+		SELECT
+			ad_agree_yn
+		FROM
+			sign_up_token
+		WHERE
+			token=#{token}
+	</select>
+
+	<delete id="deleteByToken">
+		DELETE FROM
+			sign_up_token
+		WHERE
+			token=#{token}
+	</delete>
+
+</mapper>

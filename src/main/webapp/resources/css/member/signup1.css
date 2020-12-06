@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+#container {
+	text-align: center;
+}
+#container {
+	padding : 0px 30px;
+	width: 700px;
+	margin: 0px auto;
+}
+#contents {
+	margin: 0px 50px;
+	text-align: center;
+	display: inline-block;
+}
+#div_left_header {
+	margin: 0px 0px;
+	padding-top: 50px;
+	width: 400px;
+}
+#div_all_chk {
+	margin: 10px 0px 20px;
+}
+#all_chk_explain{
+	padding: 5px 30px;
+	font-size: 14px;
+	font-family: "Noto Sans KR", sans-serif;
+	color: #545454;
+}
+#submit-btn {
+	background-color: #ffdada;
+	color: #ffffff;
+	text-align: center;
+	font-size: 20px;
+	width: 300px;
+	border-style: none;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.div_content {
+	width: 400px;
+	display: inline-block;	
+}
+.div_chk {
+	margin-top: 20px;
+	text-align : left;
+}
+.chk {
+	padding: 5px;
+	font-size: larger;
+	font-failmy: "Noto Sans KR", sans-serif;
+}
+.chk label {
+	text-decoration: underline;
+	font-weight: 500;
+}
+.chk > span {
+	font-size: 15px;
+	color: gray;
+}
+.agreement_box {
+	overflow: auto;
+	height: 200px;
+	font-size: 10px;
+	border: 1px solid gray;
+	margin: 5px 30px;
+	font-failmy: "Noto Sans KR", sans-serif;
+	width:340px;
+	font-size: 13px;
+	padding: 5px;
+	color: #545454;
+}
+h1 {
+	font-size: 3.5em;
+	font-weight: 900;
+	text-align: center;
+	color: #ffdada;
+}
+.fieldlabel{
+	        height:20px;
+	        padding-right:10px;
+	        background-color: #ffdada;
+	        text-align: left
+			}
+.titlelabel{
+	display: inline-block;
+	width: 15%;
+}

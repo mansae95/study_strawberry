@@ -1,0 +1,67 @@
+@charset "UTF-8";
+:root {
+	--sb-pink: #FFDADA;
+}
+
+.sb-center {
+	position: relative;
+	display: inline-block;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sb-tbox {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.sb-tbox > p {
+	position: absolute;
+	width: 100px;
+	left: 10px; top: 50%;
+	transform: translate(0%, calc(-50% + 1px));
+	font-size: 12px;
+	font-weight: 700;
+	color: #ccc;
+}
+
+.sb-tbox > p:after {
+	content: ':';
+	position: absolute;
+    right: 0;
+}
+
+.sb-tbox > input{
+	width: calc(100% - 120px); height: 23px;
+	border-style: none;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 5px;
+	padding-left: 115px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	vertical-align: middle;
+	outline: none;
+	color: #666;
+}
+
+.sb-tbox > input:focus {
+	border: 1px solid var(--sb-pink);
+}
+
+.sb-tbox > input:focus ~ p {
+	color : pink;
+}
+
+.sb-submit {
+	border-style: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #333333;
+	background-color: var(--sb-pink);
+	box-shadow: 1px 1px 5px rgba(255,153,153, 0.8);
+	outline: none;
+	padding: 7.5px 20px;
+	cursor: pointer;
+}
